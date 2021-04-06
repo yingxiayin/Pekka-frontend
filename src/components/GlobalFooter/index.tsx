@@ -12,7 +12,9 @@ const GlobalFooter: FC = () => {
     <>
       <Footer className={styles.footer}>
         <div className={styles.logo_position}>
-          <img className={styles.logo} src={logoLight} alt="logo" />
+          <a href="/home">
+            <img className={styles.logo} src={logoLight} alt="logo" />
+          </a>
         </div>
         <a className={styles.menu} href="./about">
           关于Pekka

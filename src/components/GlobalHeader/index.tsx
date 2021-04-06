@@ -33,7 +33,9 @@ const GlobalHeader: FC = () => {
       {isWindowScroll ? (
         <Header className={styles.header_hover}>
           <div className={styles.logo_position}>
-            <img className={styles.logo} src={logoDark} alt="logo" />
+            <a href="/home">
+              <img className={styles.logo} src={logoDark} alt="logo" />
+            </a>
           </div>
           <a className={styles.menu_hover} href="/history">
             发展历程
@@ -58,7 +60,9 @@ const GlobalHeader: FC = () => {
         <Header className={styles.header}>
           <div className={styles.logo_position}>
             <div className={styles.logo_area}>
-              <img className={styles.logo} src={logoLight} alt="logo" />
+              <a href="/home">
+                <img className={styles.logo} src={logoLight} alt="logo" />
+              </a>
             </div>
           </div>
           <a className={styles.menu} href="/history">
