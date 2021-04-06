@@ -1,5 +1,5 @@
 export interface dataTableProps {
-  title: string;
+  title?: string;
   num: string;
   addFrom: number;
   addTo: number;
@@ -16,13 +16,12 @@ export interface pieDataType {
 }
 
 export interface lineDataProps {
-  dataList: lineDataType[]
+  dataList: lineDataType[];
 }
 
 export interface lineDataGroupProps {
-  day: lineDataType[],
-  week: lineDataType[],
-  month: lineDataType[],
-  year: lineDataType[]
+  day: lineDataType[];
+  week: lineDataType[];
+  month: lineDataType[];
+  year: lineDataType[];
 }
-

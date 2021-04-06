@@ -1,0 +1,42 @@
+<svg width="800" height="120" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <rect width="800" height="120"
+        style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0)"/>
+  <text id="TextElement" x="0" y="48" style="font-family:Verdana;font-size:48;fill:rgb(255,0,0)">
+    <tspan x="0" y="40" fill="#ffffff">LEBAK BULUS
+    </tspan>
+    <tspan x="600" y="40" fill="#ffffff">16:00 6
+    </tspan>
+    <tspan x="120" y="100" fill="yellow">Kereta MUB jatan langsug
+      <animate attributeType="CSS" attributeName="fill"
+               from="#000000" to="red" begin="0.2s" dur="0.5s"
+               repeatCount="indefinite">
+      </animate>
+    </tspan>
+  </text>
+</svg>
+<svg width="800" height="148" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<rect width="1024" height="500"
+      style="fill:rgb(0,0,0);stroke-width:1;
+					   stroke:rgb(0,0,0)"/>
+<text id="TextElement" x="0" y="30"
+      style="font-family:Verdana;font-size:32">
+  <tspan x="120" y="30" fill="green">First line
+    <animate attributeType="CSS" attributeName="fill"
+             from="#000000" to="#F40" dur="0.5s"
+             repeatCount="indefinite">
+    </animate>
+  </tspan>
+  <tspan x="120" y="64" fill="yellow">It's BLK
+    <animate attributeType="CSS" attributeName="fill"
+             from="#000000" to="yellow" begin="0.2s" dur="0.5s"
+             repeatCount="indefinite">
+    </animate>
+  </tspan>
+</text>
+<circle cx="40" cy="50" r="30" style="fill:none;stroke-width:3;stroke:black">
+  <animate attributeType="CSS" attributeName="fill"
+           from="#000000" to="#F40" dur="0.5s"
+           repeatCount="indefinite">
+  </animate>
+</circle>
+</svg>

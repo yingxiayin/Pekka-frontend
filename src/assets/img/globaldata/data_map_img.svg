@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000px" height="600px" viewBox="0 0 1000 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <desc>Created with Sketch.</desc>
+  <style>
+    #a{animation:blink 1s infinite; -webkit-animation:blink 1s infinite;}
+  </style>
+    <g id="页面合集" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="全球数据" transform="translate(-220.000000, -3491.000000)">
+            <g id="编组-8" transform="translate(220.000000, 3491.000000)">
+                <text id="悉尼" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#333333">
+                    <tspan x="874" y="444">悉尼</tspan>
+                </text>
+                <text id="杭州" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#333333">
+                    <tspan x="729" y="299">杭州</tspan>
+                </text>
+                <text id="上海" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#333333">
+                    <tspan x="794" y="291">上海</tspan>
+                </text>
+                <text id="东京" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#333333">
+                    <tspan x="844" y="268">东京</tspan>
+                </text>
+                <text id="法兰克福" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#333333">
+                    <tspan x="512" y="230">法兰克福</tspan>
+                </text>
+                <text id="华盛顿" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#333333">
+                    <tspan x="293" y="257">华盛顿</tspan>
+                </text>
+                <text id="洛杉矶" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#333333">
+                    <tspan x="193" y="274">洛杉矶</tspan>
+                </text>
+                <text id="曼谷" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#333333">
+                    <tspan x="693" y="330">曼谷</tspan>
+                </text>
+                <text id="北京" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#333333">
+                    <tspan x="721" y="246">北京</tspan>
+                </text>
+                <g id="坐标-a" transform="translate(490.000000, 217.000000)">
+                    <circle class="a" id="a" stroke="#FFBF3E" cx="8" cy="8" r="8">
+                      <animate id="a1" attributeType="CSS" attributeName="stroke-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="stroke-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                    <circle class="a" id="a" fill="#FFBF3E" cx="8" cy="8" r="4">
+                      <animate id="a1" attributeType="CSS" attributeName="fill-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="fill-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                </g>a
+                <g id="坐标-a" transform="translate(853.000000, 432.000000)">
+                    <circle id="椭圆形" stroke="#FFBF3E" cx="8" cy="8" r="8">
+                      <animate id="a1" attributeType="CSS" attributeName="stroke-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="stroke-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                    <circle id="椭圆形" fill="#FFBF3E" cx="8" cy="8" r="4">
+                      <animate id="a1" attributeType="CSS" attributeName="fill-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="fill-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                </g>
+                <g id="坐标-b" transform="translate(822.000000, 257.000000)">
+                    <circle id="椭圆形" stroke="#1FA3FF" cx="8" cy="8" r="8">
+                      <animate id="a1" attributeType="CSS" attributeName="stroke-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="stroke-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                    <circle id="椭圆形" fill="#1FA3FF" cx="8" cy="8" r="4">
+                      <animate id="a1" attributeType="CSS" attributeName="fill-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="fill-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                </g>
+                <g id="坐标-b" transform="translate(750.000000, 234.000000)">
+                    <circle id="椭圆形" stroke="#1FA3FF" cx="8" cy="8" r="8">
+                      <animate id="a1" attributeType="CSS" attributeName="stroke-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="stroke-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                    <circle id="椭圆形" fill="#1FA3FF" cx="8" cy="8" r="4">
+                      <animate id="a1" attributeType="CSS" attributeName="fill-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="fill-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                </g>
+                <g id="坐标-b" transform="translate(772.000000, 278.000000)">
+                    <circle id="椭圆形" stroke="#1FA3FF" cx="8" cy="8" r="8">
+                      <animate id="a1" attributeType="CSS" attributeName="stroke-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="stroke-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                    <circle id="椭圆形" fill="#1FA3FF" cx="8" cy="8" r="4">
+                      <animate id="a1" attributeType="CSS" attributeName="fill-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="fill-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                </g>
+                <g id="坐标-b" transform="translate(759.000000, 287.000000)">
+                    <circle id="椭圆形" stroke="#FFBF3E" cx="8" cy="8" r="8">
+                      <animate id="a1" attributeType="CSS" attributeName="stroke-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="stroke-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                    <circle id="椭圆形" fill="#FFBF3E" cx="8" cy="8" r="4">
+                      <animate id="a1" attributeType="CSS" attributeName="fill-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="fill-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                </g>
+                <g id="坐标-b" transform="translate(722.000000, 319.000000)">
+                    <circle id="椭圆形" stroke="#1FA3FF" cx="8" cy="8" r="8">
+                      <animate id="a1" attributeType="CSS" attributeName="stroke-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="stroke-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                    <circle id="椭圆形" fill="#1FA3FF" cx="8" cy="8" r="4">
+                      <animate id="a1" attributeType="CSS" attributeName="fill-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="fill-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                </g>
+                <g id="坐标-b" transform="translate(272.000000, 245.000000)">
+                    <circle id="椭圆形" stroke="#1FA3FF" cx="8" cy="8" r="8">
+                      <animate id="a1" attributeType="CSS" attributeName="stroke-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="stroke-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                    <circle id="椭圆形" fill="#1FA3FF" cx="8" cy="8" r="4">
+                      <animate id="a1" attributeType="CSS" attributeName="fill-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="fill-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                </g>
+                <g id="坐标-b" transform="translate(171.000000, 261.000000)">
+                    <circle id="椭圆形" stroke="#1FA3FF" cx="8" cy="8" r="8">
+                      <animate id="a1" attributeType="CSS" attributeName="stroke-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="stroke-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                    <circle id="椭圆形" fill="#1FA3FF" cx="8" cy="8" r="4">
+                      <animate id="a1" attributeType="CSS" attributeName="fill-opacity"
+                               from="1" to="0" begin="0s;a2.end" dur="2s">
+                      </animate>
+                      <animate id="a2" attributeType="CSS" attributeName="fill-opacity"
+                               from="0" to="1" begin="a1.end" dur="2s">
+                      </animate>
+                    </circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

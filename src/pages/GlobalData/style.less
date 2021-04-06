@@ -1,7 +1,6 @@
 @import '../../theme/theme.less';
 
 .layout {
-
 }
 
 .content_title {
@@ -38,7 +37,7 @@
 }
 
 .two_card {
-  background-image: url("../../assets/img/globaldata/data_table_bg.png");
+  background-image: url('../../assets/img/globaldata/data_table_bg.png');
   background-size: 65vw;
   background-position: center;
   border-radius: 4px;
@@ -134,8 +133,13 @@
   width: 60vw;
   margin: 4% auto 0 auto;
   box-shadow: 0 0 40px 0 rgba(30, 32, 70, 0.05);
-}
-
-.six_map_table_area img {
-  width: 100%;
+  embed {
+    position: absolute;
+    z-index: 50;
+    width: 60vw;
+  }
+  img {
+    position: relative;
+    width: 100%;
+  }
 }

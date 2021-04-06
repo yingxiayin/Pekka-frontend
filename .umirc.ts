@@ -8,7 +8,7 @@ export default defineConfig({
     type: 'none',
   },
   routes: [
-    {path: '/', redirect: '/home'},
+    { path: '/', redirect: '/home' },
     { path: '/home', name: 'home', component: '@/pages/Home' },
     { path: '/data', name: 'data', component: '@/pages/GlobalData' },
     { path: '/values', name: 'values', component: '@/pages/ProductValues' },
@@ -16,6 +16,7 @@ export default defineConfig({
     { path: '/cases', name: 'cases', component: '@/pages/Cases' },
     { path: '/history', name: 'history', component: '@/pages/History' },
     { path: '/about', name: 'about', component: '@/pages/AboutUs' },
+    { path: '/admin', name: 'admin', component: '@/pages/Admin' },
   ],
   fastRefresh: {},
 });
