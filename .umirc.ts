@@ -13,7 +13,7 @@ export default defineConfig({
       path: '/home',
       name: 'home',
       component: '@/pages/Home',
-      title: 'Pekka——全球领先的高性能渲染平台',
+      title: 'Pekicr——全球领先的高性能渲染平台',
     },
     {
       path: '/data',

@@ -30,7 +30,7 @@ const HomePage: FC = () => {
             </div>
           </div>
           <div className={styles.content_two}>
-            <div className={styles.content_title}>Pekka分布式云渲染特色</div>
+            <div className={styles.content_title}>Pekicr分布式云渲染特色</div>
             <div className={styles.content_subtitle}>
               专注分布式云渲染服务,提升服务品质
             </div>

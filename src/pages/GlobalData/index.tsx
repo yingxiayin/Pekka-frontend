@@ -112,7 +112,7 @@ const GlobalDataPage: FC = () => {
           </div>
           <div className={styles.content_two}>
             <div className={styles.content_title}>
-              Pekka分布式云渲染全球节点实时动态数据
+              Pekicr分布式云渲染全球节点实时动态数据
             </div>
             <div className={styles.content_subtitle}>
               用全球分布式去中心化区块链技术改变云渲染产业，让世界更高效
@@ -211,7 +211,7 @@ const GlobalDataPage: FC = () => {
               共享全球算力，开启云渲染服务
             </div>
             <div className={styles.content_subtitle}>
-              Pekka节点算力来自全球各地，实现海量节点拓展，提供全球性急速渲染服务，用户遍及美洲、亚洲、欧洲、中东等区域，为全球用户带来极致非凡的云渲染解决方案服务。
+              Pekicr节点算力来自全球各地，实现海量节点拓展，提供全球性急速渲染服务，用户遍及美洲、亚洲、欧洲、中东等区域，为全球用户带来极致非凡的云渲染解决方案服务。
             </div>
             <div className={styles.six_map_table_area}>
               <embed src={mapPointImg} />

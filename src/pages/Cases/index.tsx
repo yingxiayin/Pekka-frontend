@@ -24,7 +24,7 @@ const CasesPage: FC = () => {
             </div>
           </div>
           <div className={styles.content_two}>
-            <div className={styles.content_title}>Pekka成功案例展示</div>
+            <div className={styles.content_title}>Pekicr成功案例展示</div>
             <div className={styles.content_subtitle}>
               Global distributed cloud rendering, computing and date platform
             </div>
@@ -33,9 +33,9 @@ const CasesPage: FC = () => {
                 <img src={v1} alt="v1" />
               </div>
               <div className={styles.two_content_big_text}>
-                <div className={styles.h}>Pekka成功案例展示</div>
+                <div className={styles.h}>Pekicr成功案例展示</div>
                 <div className={styles.p}>
-                  Pekka云渲染提供给客户简单便捷的操作方式，数倍于单机版本的渲染效果，同时可以将全球各地的GPU有效的利用起来
+                  Pekicr云渲染提供给客户简单便捷的操作方式，数倍于单机版本的渲染效果，同时可以将全球各地的GPU有效的利用起来
                 </div>
               </div>
             </div>

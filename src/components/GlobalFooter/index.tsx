@@ -17,11 +17,11 @@ const GlobalFooter: FC = () => {
           </a>
         </div>
         <a className={styles.menu} href="./about">
-          关于Pekka
+          关于Pekicr
         </a>
         <a className={styles.menu}>联系我们</a>
         <a className={styles.menu}>隐私条款</a>
-        <div className={styles.right}>Pekka ©2021 Created by Pekka</div>
+        <div className={styles.right}>Pekicr ©2021 Created by Pekicr</div>
       </Footer>
     </>
   );

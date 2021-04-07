@@ -22,7 +22,7 @@ const HistoryPage: FC = () => {
             </div>
           </div>
           <div className={styles.content_two}>
-            <div className={styles.content_title}>Pekka发展历程</div>
+            <div className={styles.content_title}>Pekicr发展历程</div>
             <div className={styles.content_subtitle}>
               Global distributed cloud rendering, computing and date platform
             </div>

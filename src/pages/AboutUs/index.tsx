@@ -23,7 +23,7 @@ const AboutUsPage: FC = () => {
             </div>
           </div>
           <div className={styles.content_two}>
-            <div className={styles.content_title}>关于Pekka</div>
+            <div className={styles.content_title}>关于Pekicr</div>
             <div className={styles.content_subtitle}>
               Global distributed cloud rendering, computing and date platform
             </div>
@@ -37,10 +37,10 @@ const AboutUsPage: FC = () => {
               </div>
               <div className={styles.two_content_p}>
                 <p>
-                  Pekka是一个利用全球闲置显卡算力和分布式的云算力，通过开发者创建服务的深度云计算服务平台，使用户可以轻松使用价格低廉且多样化的渲染，边缘计算等服务来满足其商业需求。
+                  Pekicr是一个利用全球闲置显卡算力和分布式的云算力，通过开发者创建服务的深度云计算服务平台，使用户可以轻松使用价格低廉且多样化的渲染，边缘计算等服务来满足其商业需求。
                 </p>
                 <p>
-                  其满足于家装、大型3D动画、游戏等基于3D建模的应用内容，开发者可以在Pekka平台开发并创建远程分布式云服务（例如：AR&VR、统计工具、室内设计工具等）供其他用户使用。
+                  其满足于家装、大型3D动画、游戏等基于3D建模的应用内容，开发者可以在Pekicr平台开发并创建远程分布式云服务（例如：AR&VR、统计工具、室内设计工具等）供其他用户使用。
                 </p>
               </div>
             </div>
