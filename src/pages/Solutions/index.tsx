@@ -331,12 +331,14 @@ const SolutionsPage: FC = () => {
                 {featureList.map((item) => (
                   <Card.Grid
                     className={styles.three_feature_item}
-                    hoverable={false}
+                    hoverable={true}
                   >
                     <div className={styles.three_feature_item_img_area}>
                       <img src={item.iconUrl} alt="icon" />
                     </div>
-                    <div>{item.content}</div>
+                    <div className={styles.three_feature_item_p}>
+                      {item.content}
+                    </div>
                   </Card.Grid>
                 ))}
               </Card>
