@@ -19,8 +19,12 @@ const GlobalFooter: FC = () => {
         <a className={styles.menu} href="./about">
           关于Pekicr
         </a>
-        <a className={styles.menu}>联系我们</a>
-        <a className={styles.menu}>隐私条款</a>
+        <a className={styles.menu} href="./about">
+          联系我们
+        </a>
+        <a className={styles.menu} href="./privacy">
+          隐私条款
+        </a>
         <div className={styles.right}>Pekicr ©2021 Created by Pekicr</div>
       </Footer>
     </>

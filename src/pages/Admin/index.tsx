@@ -17,6 +17,7 @@ import {
   pieData,
 } from '../../../public/fakeData';
 import { lineDataType } from '@/pages/GlobalData/model';
+import logoLight from '@/assets/img/logo_light.png';
 
 const { Content } = Layout;
 
@@ -57,7 +58,9 @@ const AdminPage: FC = () => {
       <Layout className={styles.layout}>
         <Header className={styles.header}>
           <div className={styles.logo_position}>
-            <img className={styles.logo} src={logoDark} alt="logo" />
+            <a href="/home">
+              <img className={styles.logo} src={logoDark} alt="logo" />
+            </a>
           </div>
         </Header>
         <Content>

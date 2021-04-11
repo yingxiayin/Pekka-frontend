@@ -52,6 +52,12 @@ export default defineConfig({
       title: '关于我们',
     },
     {
+      path: '/privacy',
+      name: 'privacy',
+      component: '@/pages/Privacy',
+      title: '隐私条款',
+    },
+    {
       path: '/admin',
       name: 'admin',
       component: '@/pages/Admin',

@@ -5,7 +5,9 @@ import { Layout } from 'antd';
 import GlobalHeader from '@/components/GlobalHeader';
 import GlobalFooter from '@/components/GlobalFooter';
 import topImg from '@/assets/img/history/history_top_title.png';
-import peopleImg from '@/assets/img/history/history_people_img.png';
+import peopleImg1 from '@/assets/img/history/history_people_img_1.png';
+import peopleImg2 from '@/assets/img/history/history_people_img_2.png';
+import peopleImg3 from '@/assets/img/history/history_people_img_3.png';
 import roadImg from '@/assets/img/history/history_road_img.svg';
 
 const { Content } = Layout;
@@ -38,7 +40,7 @@ const HistoryPage: FC = () => {
                 <div className={styles.three_people_item_area}>
                   <img
                     className={styles.three_people_item_img}
-                    src={peopleImg}
+                    src={peopleImg1}
                     alt="peopleImg"
                   />
                   <div className={styles.three_people_item_name}>
@@ -60,11 +62,11 @@ const HistoryPage: FC = () => {
                 <div className={styles.three_people_item_area}>
                   <img
                     className={styles.three_people_item_img}
-                    src={peopleImg}
+                    src={peopleImg2}
                     alt="peopleImg"
                   />
                   <div className={styles.three_people_item_name}>
-                    Mike Williams
+                    Scott Bingley
                     <span
                       style={{
                         fontWeight: 'normal',
@@ -72,7 +74,7 @@ const HistoryPage: FC = () => {
                         display: 'block',
                       }}
                     >
-                      CEO
+                      CFO
                     </span>
                   </div>
                 </div>
@@ -82,11 +84,11 @@ const HistoryPage: FC = () => {
                 <div className={styles.three_people_item_area}>
                   <img
                     className={styles.three_people_item_img}
-                    src={peopleImg}
+                    src={peopleImg3}
                     alt="peopleImg"
                   />
                   <div className={styles.three_people_item_name}>
-                    Mike Williams
+                    Léonie Khan
                     <span
                       style={{
                         fontWeight: 'normal',
@@ -94,7 +96,7 @@ const HistoryPage: FC = () => {
                         display: 'block',
                       }}
                     >
-                      CEO
+                      COO
                     </span>
                   </div>
                 </div>
