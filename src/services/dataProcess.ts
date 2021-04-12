@@ -4,17 +4,12 @@ import {
   lineDataType,
   pieDataType,
 } from '@/pages/GlobalData/model';
-import { requestParams } from '@/models/data';
 
-export async function changeGlobalListData(params: requestParams) {
-  const { page } = params;
-  const data = { page };
+import { dataProp } from '@/pages/Admin/model';
 
-  console.log(data);
-
-  return request('/api/changeGlobalListData', {
-    method: 'POST',
-    data,
+export async function getConfig() {
+  return request('/api/config', {
+    method: 'GET',
   })
     .then(function (response) {
       console.log(response);
@@ -25,32 +20,14 @@ export async function changeGlobalListData(params: requestParams) {
     });
 }
 
-export async function changeGlobalPieData(params: requestParams) {
-  const { page } = params;
-  const data = { page };
+export async function changeConfig(param: JSON) {
+  console.log(param);
+
+  let data = JSON.stringify(param);
 
   console.log(data);
 
-  return request('/api/changeGlobalPieData', {
-    method: 'POST',
-    data,
-  })
-    .then(function (response) {
-      console.log(response);
-      return response;
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-}
-
-export async function changeCaseData(params: requestParams) {
-  const { page } = params;
-  const data = { page };
-
-  console.log(data);
-
-  return request('/api/changeCaseData', {
+  return request('/api/config', {
     method: 'POST',
     data,
   })

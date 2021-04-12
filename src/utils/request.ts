@@ -55,5 +55,3 @@ const request = extend({
 });
 
 export default request;
-
-export const assetsUrl = 'https://img.wuling.tech/video/duoyi/';

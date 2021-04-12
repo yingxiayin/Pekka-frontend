@@ -65,4 +65,11 @@ export default defineConfig({
     },
   ],
   fastRefresh: {},
+  proxy: {
+    '/api': {
+      target: 'https://api.pekicr.com//',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '' },
+    },
+  },
 });
