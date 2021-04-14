@@ -5,7 +5,7 @@ import { Pie } from '@ant-design/charts';
 
 interface dataType {
   name: string;
-  value: number;
+  proportion: number;
 }
 
 export interface pieDataProps {
@@ -19,9 +19,13 @@ const PieTable: (props: pieDataProps) => any = (props: pieDataProps) => {
     data: dataList,
     appendPadding: 10,
     autoFit: true,
-    angleField: 'value',
+    angleField: 'proportion',
     colorField: 'name',
     radius: 0.8,
+    label: {
+      type: 'outer',
+      content: '{name} {percentage}',
+    },
     interactions: [{ type: 'tooltip', enable: false }],
     legend: false,
   };

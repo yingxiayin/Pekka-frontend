@@ -5,7 +5,7 @@ import { Layout, Card, Button } from 'antd';
 import moment from 'moment';
 
 import { ConnectState } from '@/models/connect';
-import { DataModelState } from '@/models/connect';
+import { UseDataModelState } from '@/models/connect';
 
 import LineTable from '@/components/LineTable';
 import PieTable from '@/components/PieTable';
@@ -14,34 +14,58 @@ import GlobalFooter from '@/components/GlobalFooter';
 import topImg from '@/assets/img/globaldata/data_top_title.png';
 import mapImg from '@/assets/img/globaldata/data_map_img.png';
 import mapPointImg from '@/assets/img/globaldata/data_map_img.svg';
-import { dataTableProps, lineDataType, pieDataType } from './model';
+import { dataTableProps } from './model';
 
-import {
-  listData,
-  lineOneData,
-  lineTwoData,
-  pieData,
-} from '../../../public/fakeData';
+import { lineOneData, lineTwoData } from '../../../public/fakeData';
 import { useSelector } from '@@/plugin-dva/exports';
 
 const { Content } = Layout;
 
 const GlobalDataPage: FC = () => {
-  const { listData, lineOneData, lineTwoData, pieData } = useSelector<
-    ConnectState,
-    DataModelState
-  >((state) => state.data);
+  const dispatch = useDispatch();
 
-  const [lineOneChosenData, handleChangeLineOneType] = useState<lineDataType[]>(
-    [],
-  );
-  const [lineTwoChosenData, handleChangeLineTwoType] = useState<lineDataType[]>(
-    [],
-  );
+  // 获取初始数据
+  useEffect(() => {
+    console.log('获取数据');
+    dispatch({
+      type: 'useData/fetchGlobalData',
+      payload: {},
+    });
+  }, []);
+
+  const { listTableData, hashLineData, nodeLineData, proportion } = useSelector<
+    ConnectState,
+    UseDataModelState
+  >((state) => state.useData);
+
+  const dataTableTitle: dataTableProps[] = [
+    { title: '节点用户', name: 'node_user' },
+    {
+      title: '接入节点数量',
+      name: 'node_amount',
+    },
+    {
+      title: '当前算力',
+      name: 'hashrate',
+    },
+    {
+      title: '服务商',
+      name: 'provider',
+    },
+    {
+      title: '粉丝群',
+      name: 'fan',
+    },
+    {
+      title: '访问量',
+      name: 'visit',
+    },
+  ];
+
+  const [lineOneChosenData, handleChangeLineOneType] = useState<number>(0);
+  const [lineTwoChosenData, handleChangeLineTwoType] = useState<number>(0);
 
   const [nowTime, setUpdateNowTime] = useState<number>(0);
-
-  const dispatch = useDispatch();
 
   function getTime() {
     setUpdateNowTime(moment().get('minutes'));
@@ -52,7 +76,8 @@ const GlobalDataPage: FC = () => {
   useEffect(() => {
     console.log(nowTime);
     dispatch({
-      type: 'data/fetchGlobalData',
+      type: 'useData/fetchGlobalData',
+      payload: {},
     });
   }, [nowTime]);
 
@@ -60,19 +85,19 @@ const GlobalDataPage: FC = () => {
     console.log(key);
     switch (key) {
       case 'day': {
-        handleChangeLineOneType(lineOneData.day);
+        handleChangeLineOneType(0);
         break;
       }
       case 'week': {
-        handleChangeLineOneType(lineOneData.week);
+        handleChangeLineOneType(1);
         break;
       }
       case 'month': {
-        handleChangeLineOneType(lineOneData.month);
+        handleChangeLineOneType(2);
         break;
       }
       case 'year': {
-        handleChangeLineOneType(lineOneData.year);
+        handleChangeLineOneType(3);
         break;
       }
     }
@@ -82,19 +107,19 @@ const GlobalDataPage: FC = () => {
     console.log(key);
     switch (key) {
       case 'day': {
-        handleChangeLineTwoType(lineTwoData.day);
+        handleChangeLineTwoType(0);
         break;
       }
       case 'week': {
-        handleChangeLineTwoType(lineTwoData.week);
+        handleChangeLineTwoType(1);
         break;
       }
       case 'month': {
-        handleChangeLineTwoType(lineTwoData.month);
+        handleChangeLineTwoType(2);
         break;
       }
       case 'year': {
-        handleChangeLineTwoType(lineTwoData.year);
+        handleChangeLineTwoType(3);
         break;
       }
     }
@@ -119,9 +144,11 @@ const GlobalDataPage: FC = () => {
             </div>
             <div className={styles.two_data_table_area}>
               <Card className={styles.two_card}>
-                {listData.map((item) => (
+                {dataTableTitle.map((item) => (
                   <Card.Grid className={styles.two_card_item} hoverable={false}>
-                    <div className={styles.two_card_num}>{item.num}</div>
+                    <div className={styles.two_card_num}>
+                      {listTableData[`${item.name}`]}
+                    </div>
                     <div className={styles.two_card_title}>{item.title}</div>
                   </Card.Grid>
                 ))}
@@ -161,7 +188,7 @@ const GlobalDataPage: FC = () => {
                   1年
                 </Button>
               </div>
-              <LineTable dataList={lineOneChosenData} />
+              <LineTable dataList={hashLineData} />
             </div>
           </div>
           <div className={styles.content_four}>
@@ -197,13 +224,13 @@ const GlobalDataPage: FC = () => {
                   1年
                 </Button>
               </div>
-              <LineTable dataList={lineTwoChosenData} />
+              <LineTable dataList={nodeLineData} />
             </div>
           </div>
           <div className={styles.content_five}>
             <div className={styles.content_five_title}>实时接入节点数</div>
             <div className={styles.five_data_table_area}>
-              <PieTable dataList={pieData} />
+              <PieTable dataList={proportion} />
             </div>
           </div>
           <div className={styles.content_six}>

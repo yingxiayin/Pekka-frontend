@@ -6,9 +6,7 @@ import { getConfig, changeConfig } from '@/services/dataProcess';
 import { message } from 'antd';
 
 export interface DataProcessModelState {
-  listAllData: dataProp;
-  pieOneData: pieOneProp;
-  pieListData: pieListProp;
+  listAllConfigData: dataProp;
 }
 
 export interface DataProcessModelStore extends DvaModel<DataProcessModelState> {
@@ -23,11 +21,11 @@ export interface DataProcessModelStore extends DvaModel<DataProcessModelState> {
   };
 }
 
-const Data: DataProcessModelStore = {
+const DataProcess: DataProcessModelStore = {
   namespace: 'dataProcess',
 
   state: {
-    listAllData: {
+    listAllConfigData: {
       nodeUser: {
         base: 0,
         min: 0,
@@ -85,21 +83,17 @@ const Data: DataProcessModelStore = {
         end: 0,
       },
     },
-    pieOneData: {
-      name: ' ',
-      proportion: 0,
-    },
-    pieListData: { proportion: [] },
   },
   effects: {
-    *fetchConfig({ payload }, { call, put }) {
-      const response = yield call(getConfig, payload);
-      if (response.code === 200) {
-        console.log(response.data);
-        let listAllData = response.data;
+    *fetchConfig(_, { call, put }) {
+      console.log('fetch');
+      const response = yield call(getConfig);
+      if (response) {
+        console.log(response.http);
+        let listAllConfigData = response;
         yield put({
           type: 'save',
-          payload: { listAllData: listAllData },
+          payload: { listAllConfigData: listAllConfigData },
         });
       }
     },
@@ -107,9 +101,9 @@ const Data: DataProcessModelStore = {
     *changeConfig({ payload }, { call, put }) {
       const response = yield call(changeConfig, payload);
 
-      console.log(response.status);
+      console.log(response);
 
-      if (response.status === 200) {
+      if (response) {
         message.info('修改成功');
       }
     },
@@ -117,6 +111,7 @@ const Data: DataProcessModelStore = {
   reducers: {
     // effect获取数据处理方法
     save(state, { payload }) {
+      console.log('保存');
       return {
         ...state,
         ...payload,
@@ -125,4 +120,4 @@ const Data: DataProcessModelStore = {
   },
 };
 
-export default Data;
+export default DataProcess;

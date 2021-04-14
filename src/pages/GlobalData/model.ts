@@ -1,8 +1,6 @@
 export interface dataTableProps {
-  title?: string;
-  num: string;
-  addFrom: number;
-  addTo: number;
+  title: string;
+  name: string;
 }
 
 export interface lineDataType {

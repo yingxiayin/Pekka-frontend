@@ -8,6 +8,7 @@ import {
 import { dataProp } from '@/pages/Admin/model';
 
 export async function getConfig() {
+  console.log('发送请求');
   return request('/api/config', {
     method: 'GET',
   })

@@ -1,11 +1,8 @@
 export interface dashboardDataProps {
-  start: number,
-  end: number,
+  name: string;
 }
 
 export interface featureProps {
-  content: string,
-  iconUrl: string,
+  content: string;
+  iconUrl: string;
 }
-
-

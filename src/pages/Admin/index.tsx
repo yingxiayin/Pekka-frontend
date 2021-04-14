@@ -13,15 +13,12 @@ import {
   List,
 } from 'antd';
 
-const { Header } = Layout;
-
 import logoDark from '@/assets/img/logo_dark.png';
 import { dataProp, pieListProp, pieOneProp } from '@/pages/Admin/model';
 
-import { ConnectState } from '@/models/connect';
+import { ConnectState, DataProcessModelState } from '@/models/connect';
 
-const { Content } = Layout;
-
+const { Header, Content } = Layout;
 const listForm1: { key: number; name: string; title: string; exp: string }[] = [
   { key: 1, name: 'nodeUser', title: '节点用户', exp: '每日增加范围' },
   { key: 2, name: 'nodeAmount', title: '接入节点数量', exp: '每日增加范围' },
@@ -41,89 +38,50 @@ const listForm2: { key: number; name: string; title: string }[] = [
 const AdminPage: FC = () => {
   const dispatch = useDispatch();
 
-  // 获取最新配置
-  const initListData: dataProp = {
-    nodeUser: {
-      base: 0,
-      min: 0,
-      max: 0,
-    },
-    nodeAmount: {
-      base: 0,
-      min: 0,
-      max: 0,
-    },
-    hashrate: {
-      base: 0,
-      min: 0,
-      max: 0,
-    },
-    provider: {
-      base: 0,
-      min: 0,
-      max: 0,
-    },
-    fan: {
-      base: 0,
-      min: 0,
-      max: 0,
-    },
-    visit: {
-      base: 0,
-      min: 0,
-      max: 0,
-    },
-    proportion: [
-      {
-        name: '其他',
-        proportion: 1,
-      },
-    ],
-    pc: {
-      start: 0,
-      end: 0,
-    },
-    low: {
-      start: 0,
-      end: 0,
-    },
-    mid: {
-      start: 0,
-      end: 0,
-    },
-    high: {
-      start: 0,
-      end: 0,
-    },
-    distribute: {
-      start: 0,
-      end: 0,
-    },
-  };
+  // 获取初始数据
+  useEffect(() => {
+    console.log('获取数据');
+    dispatch({
+      type: 'dataProcess/fetchConfig',
+      payload: {},
+    });
+  }, []);
+
+  const { listAllConfigData } = useSelector<
+    ConnectState,
+    DataProcessModelState
+  >((state) => state.dataProcess);
+
+  console.log(listAllConfigData);
 
   const initPieOneData: pieOneProp = {
     name: ' ',
     proportion: 0,
   };
 
-  const [listAllData, handleChangeAllListData] = useState<dataProp>(
-    initListData,
+  const [listAllConfigNewData, handleChangeAllListData] = useState<dataProp>(
+    listAllConfigData,
   );
   const [pieOneData, handleChangePieOneData] = useState<pieOneProp>(
     initPieOneData,
   );
   const [pieListData, handleChangePieListData] = useState<pieListProp>({
-    proportion: initListData.proportion,
+    proportion: listAllConfigData.proportion,
   });
   const [isLogin, changeLoginStatus] = useState<boolean>(true);
 
   useEffect(() => {
-    handleChangeAllListData((listAllData) => {
+    console.log('本地数据更新');
+    handleChangeAllListData(listAllConfigData);
+    handleChangePieListData({ proportion: listAllConfigData.proportion });
+  }, [listAllConfigData]);
+
+  useEffect(() => {
+    handleChangeAllListData((listAllConfigNewData) => {
       // @ts-ignore
-      listAllData.proportion = pieListData.proportion;
-      return { ...listAllData };
+      listAllConfigNewData.proportion = pieListData.proportion;
+      return { ...listAllConfigNewData };
     });
-    console.log(listAllData);
   }, [pieListData]);
 
   const handleGlobalInputChange = (
@@ -132,12 +90,12 @@ const AdminPage: FC = () => {
     value: number,
   ) => {
     console.log(name, alt, value);
-    handleChangeAllListData((listAllData) => {
+    handleChangeAllListData((listAllConfigNewData) => {
       // @ts-ignore
-      listAllData[`${name}`][`${alt}`] = value;
-      return { ...listAllData };
+      listAllConfigNewData[`${name}`][`${alt}`] = value;
+      return { ...listAllConfigNewData };
     });
-    console.log(listAllData);
+    console.log(listAllConfigNewData);
   };
 
   const handleGlobalPieChange = (form: pieOneProp) => {
@@ -176,7 +134,7 @@ const AdminPage: FC = () => {
 
   // 删除一项
   /**
-  const handleDeletePieListData = (name: string) => {
+   const handleDeletePieListData = (name: string) => {
     handleChangePieListData((pieListData) => {
       let i = 0
       while (i < pieListData.proportion.length) {
@@ -189,7 +147,7 @@ const AdminPage: FC = () => {
       return {...pieListData}
     })
   }
-  **/
+   **/
 
   const handleSolutionInputChange = (
     name: string,
@@ -197,18 +155,23 @@ const AdminPage: FC = () => {
     value: number,
   ) => {
     console.log(name, alt, value);
-    handleChangeAllListData((listAllData) => {
+    handleChangeAllListData((listAllConfigNewData) => {
       // @ts-ignore
-      listAllData[`${name}`][`${alt}`] = value;
-      return { ...listAllData };
+      listAllConfigNewData[`${name}`][`${alt}`] = value;
+      return { ...listAllConfigNewData };
     });
-    console.log(listAllData);
+    console.log(listAllConfigNewData);
   };
 
   const handleAllDataChangeBtn = () => {
+    console.log('change data');
     dispatch({
       type: 'dataProcess/changeConfig',
-      payload: { ...listAllData },
+      payload: { ...listAllConfigNewData },
+    });
+    dispatch({
+      type: 'dataProcess/fetchConfig',
+      payload: {},
     });
   };
 
@@ -240,6 +203,7 @@ const AdminPage: FC = () => {
                             <Input
                               type={'number'}
                               alt="base"
+                              value={listAllConfigData[`${item.name}`].base}
                               onChange={(event) =>
                                 handleGlobalInputChange(
                                   item.name,
@@ -258,6 +222,7 @@ const AdminPage: FC = () => {
                             <Input
                               type={'number'}
                               alt="min"
+                              value={listAllConfigData[`${item.name}`].min}
                               onChange={(event) =>
                                 handleGlobalInputChange(
                                   item.name,
@@ -276,6 +241,7 @@ const AdminPage: FC = () => {
                             <Input
                               type={'number'}
                               alt="max"
+                              value={listAllConfigData[`${item.name}`].max}
                               onChange={(event) =>
                                 handleGlobalInputChange(
                                   item.name,
@@ -346,6 +312,7 @@ const AdminPage: FC = () => {
                             <Input
                               type={'number'}
                               alt="start"
+                              value={listAllConfigData[`${item.name}`].start}
                               onChange={(event) =>
                                 handleSolutionInputChange(
                                   item.name,
@@ -364,6 +331,7 @@ const AdminPage: FC = () => {
                             <Input
                               type={'number'}
                               alt="end"
+                              value={listAllConfigData[`${item.name}`].end}
                               onChange={(event) =>
                                 handleSolutionInputChange(
                                   item.name,

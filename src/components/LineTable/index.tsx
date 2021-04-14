@@ -24,6 +24,10 @@ const LineTable: (props: lineDataProps) => any = (props: lineDataProps) => {
     color: '#1FA3FF',
     autoFit: true,
     xField: 'time',
+    xAxis: {
+      type: 'timeCat',
+      tickCount: 5,
+    },
     yField: 'value',
     yAxis: {
       label: {
@@ -42,7 +46,6 @@ const LineTable: (props: lineDataProps) => any = (props: lineDataProps) => {
     },
   };
 
-  // @ts-ignore
   return (
     <>
       <div className={styles.line_area}>

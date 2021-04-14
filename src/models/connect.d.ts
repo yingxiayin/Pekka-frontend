@@ -1,8 +1,7 @@
-import {EffectsCommandMap, Subscription} from 'dva'
-import {AnyAction, Reducer} from 'redux'
-import {MenuDataItem} from '@ant-design/pro-layout'
-import {DataModelState} from './data'
-
+import { EffectsCommandMap, Subscription } from 'dva';
+import { Reducer } from 'redux';
+import { DataProcessModelState } from './dataProcess';
+import { UseDataModelState } from './useData';
 
 declare global {
   namespace NodeJS {
@@ -14,25 +13,19 @@ declare global {
   }
 }
 
-export { DataModelState }
-
+export { DataProcessModelState, UseDataModelState };
 
 export interface ConnectState {
-  data: DataModelState
+  dataProcess: DataProcessModelState;
+  useData: UseDataModelState;
 }
 
-export interface Route extends MenuDataItem {
-  routes?: Route[];
-}
+//*********************//
+// dispatch 相关类型定义 //
+//*********************//
 
-export {Reducer, EffectsCommandMap, Subscription}
-
-export type Effect = (
-  action: AnyAction,
-  effects: EffectsCommandMap & {
-    select: <T>(func: (state: ConnectState) => T) => T;
-  },
-) => void;
+// 导出基础方法类型
+export { Reducer, EffectsCommandMap, Subscription };
 
 export type Action<P = any, C = (payload: P) => void> = {
   type: string;
@@ -45,26 +38,36 @@ export type Action<P = any, C = (payload: P) => void> = {
 };
 
 /**
+ * Dva dispatch 方法的类型定义
  * @type P: Type of payload
  * @type C: Type of callback
  */
-export type Dispatch = <P = any, C = (payload: P) => void>(action: {
-  type: string;
-  payload?: P;
-  callback?: C;
-  [key: string]: any;
-}) => any;
+export type Dispatch = <P = any, C = (payload: P) => void>(
+  action: Action,
+) => any;
 
-export interface DispatchProps {
-  dispatch: Dispatch;
-}
+// Dva 中 effects 方法的类型定义
+export type Effect = (
+  action: Action,
+  effects: EffectsCommandMap & {
+    select: <T>(func: (state: ConnectState) => T) => T;
+  },
+) => void;
 
+// 导出完整可以给到任何一个 Dva Model 的类型
 export interface DvaModel<S> {
   namespace?: string;
   state: S;
-  reducers: {
-    save: Reducer<S>;
-  };
+  reducers: { [key: string]: Reducer<S> };
   effects?: { [key: string]: Effect };
   subscriptions?: { [key: string]: Subscription };
+}
+
+//************************//
+// React Props 相关类型定义 //
+//************************//
+
+// React 组件props 的 DispatchProps
+export interface DispatchProps {
+  dispatch: Dispatch;
 }

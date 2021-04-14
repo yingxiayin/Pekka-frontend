@@ -21,22 +21,27 @@ import {
   flowIconLine,
 } from './content';
 import { featureList } from './content';
-import { dashboardData } from '../../../public/fakeData';
-import { dashboardDataProps } from './model';
 import { useSelector } from '@@/plugin-dva/exports';
-import { ConnectState, DataModelState } from '@/models/connect';
+import { ConnectState, UseDataModelState } from '@/models/connect';
 import { useDispatch } from 'dva';
 
 const { Content } = Layout;
 
 const SolutionsPage: FC = () => {
-  // const {dashboardData} = useSelector<ConnectState, DataModelState>(state => state.data);
   const dispatch = useDispatch();
+
+  // 获取初始数据
   useEffect(() => {
+    console.log('获取数据');
     dispatch({
-      type: 'data/fetchSolutionData',
+      type: 'useData/fetchGlobalData',
+      payload: {},
     });
   }, []);
+
+  const { solutionTableData } = useSelector<ConnectState, UseDataModelState>(
+    (state) => state.useData,
+  );
 
   return (
     <div>
@@ -70,10 +75,7 @@ const SolutionsPage: FC = () => {
                       marginBottom: '0.2VW',
                     }}
                   >
-                    <CountUp
-                      start={dashboardData[0].start}
-                      end={dashboardData[0].end}
-                    />
+                    <CountUp start={0} end={solutionTableData.pc} />
                     <span style={{ fontSize: '0.1VW' }}>GHZ</span>
                   </div>
                   <div style={{ fontSize: '1VW' }}>
@@ -103,10 +105,7 @@ const SolutionsPage: FC = () => {
                       marginBottom: '0.2VW',
                     }}
                   >
-                    <CountUp
-                      start={dashboardData[1].start}
-                      end={dashboardData[1].end}
-                    />
+                    <CountUp start={0} end={solutionTableData.low} />
                     <span style={{ fontSize: '0.1VW' }}>GHZ</span>
                   </div>
                   <div style={{ fontSize: '1VW' }}>
@@ -135,10 +134,7 @@ const SolutionsPage: FC = () => {
                       marginBottom: '0.2VW',
                     }}
                   >
-                    <CountUp
-                      start={dashboardData[2].start}
-                      end={dashboardData[2].end}
-                    />
+                    <CountUp start={0} end={solutionTableData.mid} />
                     <span style={{ fontSize: '0.1VW' }}>GHZ</span>
                   </div>
                   <div style={{ fontSize: '1VW' }}>
@@ -168,10 +164,7 @@ const SolutionsPage: FC = () => {
                       marginBottom: '0.2VW',
                     }}
                   >
-                    <CountUp
-                      start={dashboardData[3].start}
-                      end={dashboardData[3].end}
-                    />
+                    <CountUp start={0} end={solutionTableData.high} />
                     <span style={{ fontSize: '0.1VW' }}>GHZ</span>
                   </div>
                   <div style={{ fontSize: '1VW' }}>
@@ -200,10 +193,7 @@ const SolutionsPage: FC = () => {
                       marginBottom: '0.2VW',
                     }}
                   >
-                    <CountUp
-                      start={dashboardData[4].start}
-                      end={dashboardData[4].end}
-                    />
+                    <CountUp start={0} end={solutionTableData.distribute} />
                     <span style={{ fontSize: '0.1VW' }}>GHZ</span>
                   </div>
                   <div style={{ fontSize: '1VW' }}>
