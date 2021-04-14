@@ -64,6 +64,7 @@ export default defineConfig({
       title: '配置页',
     },
   ],
+  favicon: '@/assets/logo_single.png',
   fastRefresh: {},
   proxy: {
     '/api': {
