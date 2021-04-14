@@ -22,7 +22,7 @@ const { Header, Content } = Layout;
 const listForm1: { key: number; name: string; title: string; exp: string }[] = [
   { key: 1, name: 'nodeUser', title: '节点用户', exp: '每日增加范围' },
   { key: 2, name: 'nodeAmount', title: '接入节点数量', exp: '每日增加范围' },
-  { key: 3, name: 'hashrate', title: '当前算力', exp: '每小时增加范围' },
+  { key: 3, name: 'hashrate', title: '当前算力', exp: '每日增加范围' },
   { key: 4, name: 'provider', title: '服务商', exp: '每周增加范围' },
   { key: 5, name: 'fan', title: '粉丝群', exp: '每日增加范围' },
   { key: 6, name: 'visit', title: '访问量', exp: '每分钟增加范围' },
