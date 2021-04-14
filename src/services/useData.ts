@@ -1,8 +1,10 @@
 import request from '@/utils/request';
 
+const baseUrl = 'https://api.pekicr.com';
+
 export async function getGlobalData() {
   console.log('发送请求');
-  return request('/api/data', {
+  return request(baseUrl + '/api/data', {
     method: 'GET',
   })
     .then(function (response) {
