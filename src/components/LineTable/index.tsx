@@ -12,10 +12,11 @@ interface dataType {
 
 export interface lineDataProps {
   dataList: dataType[];
+  unit: string;
 }
 
 const LineTable: (props: lineDataProps) => any = (props: lineDataProps) => {
-  const { dataList } = props;
+  const { dataList, unit } = props;
 
   const lineConfig = {
     data: dataList,
@@ -32,7 +33,7 @@ const LineTable: (props: lineDataProps) => any = (props: lineDataProps) => {
     yAxis: {
       label: {
         formatter: function formatter(v: string) {
-          return ''.concat(v, ' nanoFIL');
+          return ''.concat(v, ' ' + unit);
         },
       },
     },
@@ -41,7 +42,7 @@ const LineTable: (props: lineDataProps) => any = (props: lineDataProps) => {
     },
     tooltip: {
       formatter: function formatter(v: dataType) {
-        return { name: 'Base Fee', value: v.value + ' nanoFIL' };
+        return { name: 'Base Fee', value: v.value + ' ' + unit };
       },
     },
   };

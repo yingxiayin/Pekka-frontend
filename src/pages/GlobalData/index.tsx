@@ -14,7 +14,7 @@ import GlobalFooter from '@/components/GlobalFooter';
 import topImg from '@/assets/img/globaldata/data_top_title.png';
 import mapImg from '@/assets/img/globaldata/data_map_img.png';
 import mapPointImg from '@/assets/img/globaldata/data_map_img.svg';
-import { dataTableProps } from './model';
+import { dataTableProps, lineDataType } from './model';
 
 import { lineOneData, lineTwoData } from '../../../public/fakeData';
 import { useSelector } from '@@/plugin-dva/exports';
@@ -23,20 +23,28 @@ const { Content } = Layout;
 
 const GlobalDataPage: FC = () => {
   const dispatch = useDispatch();
+  const { listTableData, hashLineData, nodeLineData, proportion } = useSelector<
+    ConnectState,
+    UseDataModelState
+  >((state) => state.useData);
+  const [lineOne, handleChangeLineOneType] = useState<lineDataType[]>([]);
+  const [lineTwo, handleChangeLineTwoType] = useState<lineDataType[]>([]);
 
   // 获取初始数据
   useEffect(() => {
-    console.log('获取数据');
     dispatch({
       type: 'useData/fetchGlobalData',
       payload: {},
     });
   }, []);
 
-  const { listTableData, hashLineData, nodeLineData, proportion } = useSelector<
-    ConnectState,
-    UseDataModelState
-  >((state) => state.useData);
+  useEffect(() => {
+    handleChangeLineOneType(hashLineData);
+  }, [hashLineData]);
+
+  useEffect(() => {
+    handleChangeLineTwoType(nodeLineData);
+  }, [nodeLineData]);
 
   const dataTableTitle: dataTableProps[] = [
     { title: '节点用户', name: 'node_user' },
@@ -62,9 +70,6 @@ const GlobalDataPage: FC = () => {
     },
   ];
 
-  const [lineOneChosenData, handleChangeLineOneType] = useState<number>(0);
-  const [lineTwoChosenData, handleChangeLineTwoType] = useState<number>(0);
-
   const [nowTime, setUpdateNowTime] = useState<number>(0);
 
   function getTime() {
@@ -84,20 +89,16 @@ const GlobalDataPage: FC = () => {
   const handleChangeOneType = (key: string) => {
     console.log(key);
     switch (key) {
-      case 'day': {
-        handleChangeLineOneType(0);
-        break;
-      }
       case 'week': {
-        handleChangeLineOneType(1);
+        handleChangeLineOneType(hashLineData.splice(-7));
         break;
       }
       case 'month': {
-        handleChangeLineOneType(2);
+        handleChangeLineOneType(hashLineData.splice(-30));
         break;
       }
       case 'year': {
-        handleChangeLineOneType(3);
+        handleChangeLineOneType(hashLineData);
         break;
       }
     }
@@ -106,20 +107,16 @@ const GlobalDataPage: FC = () => {
   const handleChangeTwoType = (key: string) => {
     console.log(key);
     switch (key) {
-      case 'day': {
-        handleChangeLineTwoType(0);
-        break;
-      }
       case 'week': {
-        handleChangeLineTwoType(1);
+        handleChangeLineTwoType(nodeLineData.splice(-7));
         break;
       }
       case 'month': {
-        handleChangeLineTwoType(2);
+        handleChangeLineTwoType(nodeLineData.splice(-30));
         break;
       }
       case 'year': {
-        handleChangeLineTwoType(3);
+        handleChangeLineTwoType(nodeLineData);
         break;
       }
     }
@@ -162,13 +159,6 @@ const GlobalDataPage: FC = () => {
                 <Button
                   type="default"
                   size="small"
-                  onClick={() => handleChangeOneType('day')}
-                >
-                  24时
-                </Button>
-                <Button
-                  type="default"
-                  size="small"
                   onClick={() => handleChangeOneType('week')}
                 >
                   7天
@@ -188,20 +178,13 @@ const GlobalDataPage: FC = () => {
                   1年
                 </Button>
               </div>
-              <LineTable dataList={hashLineData} />
+              <LineTable dataList={lineOne} unit={'nanoFIL'} />
             </div>
           </div>
           <div className={styles.content_four}>
             <div className={styles.content_four_title}>实时接入节点数</div>
             <div className={styles.four_data_table_area}>
               <div className={styles.table_button_area}>
-                <Button
-                  type="default"
-                  size="small"
-                  onClick={() => handleChangeTwoType('day')}
-                >
-                  24时
-                </Button>
                 <Button
                   type="default"
                   size="small"
@@ -224,7 +207,7 @@ const GlobalDataPage: FC = () => {
                   1年
                 </Button>
               </div>
-              <LineTable dataList={nodeLineData} />
+              <LineTable dataList={lineTwo} unit={''} />
             </div>
           </div>
           <div className={styles.content_five}>
