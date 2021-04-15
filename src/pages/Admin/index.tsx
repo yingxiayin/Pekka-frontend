@@ -132,22 +132,29 @@ const AdminPage: FC = () => {
     console.log(pieListData.proportion);
   };
 
-  // 删除一项
-  /**
-   const handleDeletePieListData = (name: string) => {
+  const handleDeletePieListData = (name: string, p: number) => {
     handleChangePieListData((pieListData) => {
-      let i = 0
+      let i = 0;
       while (i < pieListData.proportion.length) {
-        if (pieListData.proportion[i].name == name && name !== '其他') {
-          pieListData.proportion.slice(-1)[0].proportion = Number((pieListData.proportion.slice(-1)[0].proportion + pieListData.proportion[i].proportion).toFixed(2))
-          pieListData.proportion = pieListData.proportion.splice(i, 1)
+        if (
+          pieListData.proportion[i].name == name &&
+          pieListData.proportion[i].proportion == p
+        ) {
+          pieListData.proportion[
+            pieListData.proportion.length - 1
+          ].proportion = Number(
+            (
+              pieListData.proportion[pieListData.proportion.length - 1]
+                .proportion + pieListData.proportion[i].proportion
+            ).toFixed(2),
+          );
+          pieListData.proportion.splice(i, 1);
         }
-        i++
+        i++;
       }
-      return {...pieListData}
-    })
-  }
-   **/
+      return { ...pieListData };
+    });
+  };
 
   const handleSolutionInputChange = (
     name: string,
@@ -287,7 +294,22 @@ const AdminPage: FC = () => {
                       dataSource={pieListData.proportion}
                       renderItem={(item) => (
                         <List.Item
-                        // actions={[<a onClick={() => handleDeletePieListData(item.name)}>删除</a>]}
+                          actions={[
+                            item.name !== '其他' ? (
+                              <a
+                                onClick={() =>
+                                  handleDeletePieListData(
+                                    item.name,
+                                    item.proportion,
+                                  )
+                                }
+                              >
+                                删除
+                              </a>
+                            ) : (
+                              ''
+                            ),
+                          ]}
                         >
                           <List.Item.Meta title={item.name} />
                           <div>{item.proportion}</div>
