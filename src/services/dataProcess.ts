@@ -11,7 +11,7 @@ const baseUrl = 'https://api.pekicr.com';
 
 export async function getConfig() {
   console.log('发送请求');
-  return request('/api/config', {
+  return request(baseUrl + '/config', {
     method: 'GET',
   })
     .then(function (response) {
@@ -30,7 +30,7 @@ export async function changeConfig(param: JSON) {
 
   console.log(data);
 
-  return request('/api/config', {
+  return request(baseUrl + '/config', {
     method: 'POST',
     data,
   })
