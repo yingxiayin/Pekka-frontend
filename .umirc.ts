@@ -58,7 +58,7 @@ export default defineConfig({
       title: '隐私条款',
     },
     {
-      path: '/admin',
+      path: '/admincn999',
       name: 'admin',
       component: '@/pages/Admin',
       title: '配置页',
