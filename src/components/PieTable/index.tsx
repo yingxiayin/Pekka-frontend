@@ -24,7 +24,7 @@ const PieTable: (props: pieDataProps) => any = (props: pieDataProps) => {
     radius: 0.8,
     label: {
       type: 'outer',
-      content: '{name} {percentage}',
+      content: '{name}  {percentage}',
     },
     interactions: [{ type: 'tooltip', enable: false }],
     legend: false,

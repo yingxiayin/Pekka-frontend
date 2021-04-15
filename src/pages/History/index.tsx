@@ -88,7 +88,7 @@ const HistoryPage: FC = () => {
                     alt="peopleImg"
                   />
                   <div className={styles.three_people_item_name}>
-                    Léonie Khan
+                    George Bush
                     <span
                       style={{
                         fontWeight: 'normal',

@@ -17,11 +17,11 @@ export interface UseDataModelState {
   nodeLineData: [{ time: string; value: number }];
   proportion: { name: string; proportion: number }[];
   solutionTableData: {
-    pc: number;
-    low: number;
-    mid: number;
-    high: number;
-    distribute: number;
+    pc: { start: number; end: number };
+    low: { start: number; end: number };
+    mid: { start: number; end: number };
+    high: { start: number; end: number };
+    distribute: { start: number; end: number };
   };
 }
 
@@ -52,7 +52,13 @@ const UseData: UseDataModelStore = {
     hashLineData: [{ time: '', value: 0 }],
     nodeLineData: [{ time: '', value: 0 }],
     proportion: [],
-    solutionTableData: { pc: 0, low: 0, mid: 0, high: 0, distribute: 0 },
+    solutionTableData: {
+      pc: { start: 0, end: 0 },
+      low: { start: 0, end: 0 },
+      mid: { start: 0, end: 0 },
+      high: { start: 0, end: 0 },
+      distribute: { start: 0, end: 0 },
+    },
   },
   effects: {
     *fetchGlobalData(_, { call, put }) {

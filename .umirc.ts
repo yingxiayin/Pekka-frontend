@@ -8,9 +8,9 @@ export default defineConfig({
     type: 'none',
   },
   routes: [
-    { path: '/', redirect: '/home' },
+    { path: '/home', redirect: '/' },
     {
-      path: '/home',
+      path: '/',
       name: 'home',
       component: '@/pages/Home',
       title: 'Pekicr——全球领先的高性能渲染平台',
@@ -64,7 +64,7 @@ export default defineConfig({
       title: '配置页',
     },
   ],
-  favicon: '@/assets/logo_single.png',
+  favicon: '/assets/logo_single.png',
   fastRefresh: {},
   proxy: {
     '/api': {

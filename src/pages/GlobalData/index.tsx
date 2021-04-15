@@ -53,7 +53,7 @@ const GlobalDataPage: FC = () => {
       name: 'node_amount',
     },
     {
-      title: '当前算力',
+      title: '当前算力 GH/s',
       name: 'hashrate',
     },
     {
@@ -178,7 +178,7 @@ const GlobalDataPage: FC = () => {
                   1年
                 </Button>
               </div>
-              <LineTable dataList={lineOne} unit={'nanoFIL'} />
+              <LineTable dataList={lineOne} unit={'GH/s'} />
             </div>
           </div>
           <div className={styles.content_four}>

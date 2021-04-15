@@ -75,7 +75,10 @@ const SolutionsPage: FC = () => {
                       marginBottom: '0.2VW',
                     }}
                   >
-                    <CountUp start={0} end={solutionTableData.pc} />
+                    <CountUp
+                      start={solutionTableData.pc.start}
+                      end={solutionTableData.pc.end}
+                    />
                     <span style={{ fontSize: '0.1VW' }}>GHZ</span>
                   </div>
                   <div style={{ fontSize: '1VW' }}>
@@ -105,7 +108,10 @@ const SolutionsPage: FC = () => {
                       marginBottom: '0.2VW',
                     }}
                   >
-                    <CountUp start={0} end={solutionTableData.low} />
+                    <CountUp
+                      start={solutionTableData.low.start}
+                      end={solutionTableData.low.end}
+                    />
                     <span style={{ fontSize: '0.1VW' }}>GHZ</span>
                   </div>
                   <div style={{ fontSize: '1VW' }}>
@@ -134,7 +140,10 @@ const SolutionsPage: FC = () => {
                       marginBottom: '0.2VW',
                     }}
                   >
-                    <CountUp start={0} end={solutionTableData.mid} />
+                    <CountUp
+                      start={solutionTableData.mid.start}
+                      end={solutionTableData.mid.end}
+                    />
                     <span style={{ fontSize: '0.1VW' }}>GHZ</span>
                   </div>
                   <div style={{ fontSize: '1VW' }}>
@@ -164,7 +173,10 @@ const SolutionsPage: FC = () => {
                       marginBottom: '0.2VW',
                     }}
                   >
-                    <CountUp start={0} end={solutionTableData.high} />
+                    <CountUp
+                      start={solutionTableData.high.start}
+                      end={solutionTableData.high.end}
+                    />
                     <span style={{ fontSize: '0.1VW' }}>GHZ</span>
                   </div>
                   <div style={{ fontSize: '1VW' }}>
@@ -193,7 +205,10 @@ const SolutionsPage: FC = () => {
                       marginBottom: '0.2VW',
                     }}
                   >
-                    <CountUp start={0} end={solutionTableData.distribute} />
+                    <CountUp
+                      start={solutionTableData.distribute.start}
+                      end={solutionTableData.distribute.end}
+                    />
                     <span style={{ fontSize: '0.1VW' }}>GHZ</span>
                   </div>
                   <div style={{ fontSize: '1VW' }}>
