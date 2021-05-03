@@ -20,6 +20,7 @@ const LineTable: (props: lineDataProps) => any = (props: lineDataProps) => {
 
   const lineConfig = {
     data: dataList,
+    render: 'svg',
     padding: 'auto',
     smooth: true,
     color: '#1FA3FF',
@@ -28,17 +29,26 @@ const LineTable: (props: lineDataProps) => any = (props: lineDataProps) => {
     xAxis: {
       type: 'timeCat',
       tickCount: 5,
-    },
-    yField: 'value',
-    yAxis: {
       label: {
-        formatter: function formatter(v: string) {
-          return ''.concat(v, ' ' + unit);
+        styles: {
+          fontSize: 5,
         },
       },
     },
+    yField: 'value',
+    yAxis: {
+      title: {
+        text: '单位：' + unit,
+      },
+      label: {
+        styles: {
+          fontSize: 5,
+        },
+      },
+      verticalLimitLength: 10,
+    },
     lineStyle: {
-      lineWidth: 3,
+      lineWidth: 1,
     },
     tooltip: {
       formatter: function formatter(v: dataType) {

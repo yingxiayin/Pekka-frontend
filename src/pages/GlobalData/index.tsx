@@ -207,7 +207,7 @@ const GlobalDataPage: FC = () => {
                   1年
                 </Button>
               </div>
-              <LineTable dataList={lineTwo} unit={''} />
+              <LineTable dataList={lineTwo} unit={'个'} />
             </div>
           </div>
           <div className={styles.content_five}>
