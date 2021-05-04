@@ -1,7 +1,7 @@
 import styles from './style.less';
 import React, { FC, useEffect, useState } from 'react';
 import { useDispatch } from 'dva';
-import { Layout, Card, Button } from 'antd';
+import { Layout, Card, Button, Radio } from 'antd';
 import moment from 'moment';
 
 import { ConnectState } from '@/models/connect';
@@ -86,9 +86,9 @@ const GlobalDataPage: FC = () => {
     });
   }, [nowTime]);
 
-  const handleChangeOneType = (key: string) => {
-    console.log(key);
-    switch (key) {
+  const handleChangeOneType = (value: string) => {
+    console.log(value);
+    switch (value) {
       case 'week': {
         handleChangeLineOneType(hashLineData.splice(-7));
         break;
@@ -104,9 +104,9 @@ const GlobalDataPage: FC = () => {
     }
   };
 
-  const handleChangeTwoType = (key: string) => {
-    console.log(key);
-    switch (key) {
+  const handleChangeTwoType = (value: string) => {
+    console.log(value);
+    switch (value) {
       case 'week': {
         handleChangeLineTwoType(nodeLineData.splice(-7));
         break;
@@ -156,27 +156,32 @@ const GlobalDataPage: FC = () => {
             <div className={styles.content_three_title}>实时算力趋势图</div>
             <div className={styles.three_data_table_area}>
               <div className={styles.table_button_area}>
-                <Button
-                  type="default"
-                  size="small"
-                  onClick={() => handleChangeOneType('week')}
+                <Radio.Group
+                  defaultValue="week"
+                  onChange={(e) => handleChangeOneType(e.target.value)}
                 >
-                  7天
-                </Button>
-                <Button
-                  type="default"
-                  size="small"
-                  onClick={() => handleChangeOneType('month')}
-                >
-                  30天
-                </Button>
-                <Button
-                  type="default"
-                  size="small"
-                  onClick={() => handleChangeOneType('year')}
-                >
-                  1年
-                </Button>
+                  <Radio.Button
+                    className={styles.table_button}
+                    value="week"
+                    type="small"
+                  >
+                    7天
+                  </Radio.Button>
+                  <Radio.Button
+                    className={styles.table_button}
+                    value="month"
+                    type="small"
+                  >
+                    30天
+                  </Radio.Button>
+                  <Radio.Button
+                    className={styles.table_button}
+                    value="year"
+                    type="small"
+                  >
+                    1年
+                  </Radio.Button>
+                </Radio.Group>
               </div>
               <LineTable dataList={lineOne} unit={'GH/s'} />
             </div>
@@ -185,27 +190,32 @@ const GlobalDataPage: FC = () => {
             <div className={styles.content_four_title}>实时接入节点数</div>
             <div className={styles.four_data_table_area}>
               <div className={styles.table_button_area}>
-                <Button
-                  type="default"
-                  size="small"
-                  onClick={() => handleChangeTwoType('week')}
+                <Radio.Group
+                  defaultValue="week"
+                  onChange={(e) => handleChangeTwoType(e.target.value)}
                 >
-                  7天
-                </Button>
-                <Button
-                  type="default"
-                  size="small"
-                  onClick={() => handleChangeTwoType('month')}
-                >
-                  30天
-                </Button>
-                <Button
-                  type="default"
-                  size="small"
-                  onClick={() => handleChangeTwoType('year')}
-                >
-                  1年
-                </Button>
+                  <Radio.Button
+                    className={styles.table_button}
+                    value="week"
+                    type="small"
+                  >
+                    7天
+                  </Radio.Button>
+                  <Radio.Button
+                    className={styles.table_button}
+                    value="month"
+                    type="small"
+                  >
+                    30天
+                  </Radio.Button>
+                  <Radio.Button
+                    className={styles.table_button}
+                    value="year"
+                    type="small"
+                  >
+                    1年
+                  </Radio.Button>
+                </Radio.Group>
               </div>
               <LineTable dataList={lineTwo} unit={'个'} />
             </div>
