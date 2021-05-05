@@ -157,7 +157,7 @@ const GlobalDataPage: FC = () => {
             <div className={styles.three_data_table_area}>
               <div className={styles.table_button_area}>
                 <Radio.Group
-                  defaultValue="week"
+                  defaultValue="month"
                   onChange={(e) => handleChangeOneType(e.target.value)}
                 >
                   <Radio.Button
@@ -191,7 +191,7 @@ const GlobalDataPage: FC = () => {
             <div className={styles.four_data_table_area}>
               <div className={styles.table_button_area}>
                 <Radio.Group
-                  defaultValue="week"
+                  defaultValue="month"
                   onChange={(e) => handleChangeTwoType(e.target.value)}
                 >
                   <Radio.Button
